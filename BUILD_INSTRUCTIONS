@@ -8,3 +8,10 @@
 
     v0.10.25
 
+
+(3) Verify that NPM has also been installed as a dependency of Node.js:
+
+    $ npm -v
+
+    1.3.10
+
