@@ -22,3 +22,9 @@
 
     ...
 
+(5) Bundle the JavaScript with Webpack for deployment:
+
+    $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
+
+    ...
+
