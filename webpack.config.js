@@ -7,6 +7,12 @@ const path = require('path');
 
 module.exports = {
     entry: [path.join(__dirname, 'webpack_in', 'entry.js')],
+    module: {
+        loaders: [{
+            loader:   'babel-loader',
+            test:     /\.jsx$/
+          }]
+      },
     output: {
         path:      path.join(__dirname, 'webpack_out'),
         filename:  'minimalistic_react.js'
