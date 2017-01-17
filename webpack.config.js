@@ -6,7 +6,8 @@
 const path = require('path');
 
 module.exports = {
-    entry: [path.join(__dirname, 'webpack_in', 'entry.js')],
+    entry: [path.join(__dirname, 'webpack_in', 'entry.js'),
+            path.join(__dirname, 'webpack_in', 'entry.jsx')],
     module: {
         loaders: [{
             loader:   'babel-loader',
