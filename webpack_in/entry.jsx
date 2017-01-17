@@ -4,3 +4,10 @@
 
 
 console.log("JSX entry logic.");
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+ReactDOM.render(<div>Hello!  I'm a React app!!</div>, document.getElementById('react-app'));
