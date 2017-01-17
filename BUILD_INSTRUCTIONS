@@ -22,7 +22,15 @@
 
     ...
 
-(5) Bundle the JavaScript with Webpack for deployment:
+
+(5) Install the Babel transpiler:
+
+    $ npm install babel-loader
+
+    ...
+
+
+(6) Bundle / transpile the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
