@@ -17,6 +17,12 @@ module.exports = {
               }
           }]
       },
+    resolve: {
+        alias: {
+            'react':      'preact-compat',
+            'react-dom':  'preact-compat'
+          }
+      },
     output: {
         path:      path.join(__dirname, 'webpack_out'),
         filename:  'minimalistic_react.js'
