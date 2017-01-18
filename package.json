@@ -1,0 +1,22 @@
+{
+  "description": "This repo contains example commits for building a minimalistic React front-end app step by step, as outlined in the tutorial at http://maratbn.com/blogs/2017/01/14/minimalistic-react-webapp/",
+  "dependencies": {
+    "preact": "~7.1.0",
+    "preact-compat": "~3.10.0",
+    "react": "~15.4.2",
+    "react-dom": "~15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "~6.21.0",
+    "babel-loader": "~6.2.10",
+    "babel-preset-es2015": "~6.18.0",
+    "babel-preset-react": "~6.16.0",
+    "webpack": "~1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maratbn/example_step_by_step_minimalistic_react_app.git"
+  },
+  "author": "maratbn",
+  "license": "Unlicense"
+}
