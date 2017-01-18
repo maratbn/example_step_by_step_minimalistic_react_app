@@ -74,6 +74,6 @@
 
 (12) Bundle / transpile the JavaScript with Webpack for deployment:
 
-    $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
+    $ ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js
 
     ...
