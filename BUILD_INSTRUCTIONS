@@ -16,49 +16,14 @@
     1.3.10
 
 
-(4) Install the Webpack module bundler:
+(4) Install the required NPM modules:
 
-    $ npm install webpack
-
-    ...
-
-
-(5) Install the Babel transpiler:
-
-    $ npm install babel-loader
+    $ npm install
 
     ...
 
 
-(6) Install the Babel preset 'es2015':
-
-    $ npm install babel-preset-es2015
-
-    ...
-
-
-(7) Install the Babel preset 'react':
-
-    $ npm install babel-preset-react
-
-    ...
-
-
-(8) Install the NPM module for React:
-
-    $ npm install react
-
-    ...
-
-
-(9) Install the NPM module for React DOM:
-
-    $ npm install react-dom
-
-    ...
-
-
-(10) Bundle / transpile the JavaScript with Webpack for deployment:
+(5) Bundle / transpile the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
