@@ -51,14 +51,28 @@
     ...
 
 
-(9) Bundle / transpile the JavaScript with Webpack for deployment:
+(9) Install the NPM module for React:
+
+    $ npm install react
+
+    ...
+
+
+(10) Install the NPM module for React DOM:
+
+    $ npm install react-dom
+
+    ...
+
+
+(11) Bundle / transpile the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
     ...
 
 
-(10) If you want Webpack to auto-bundle your JavaScript whenever any of it changes, issue this command instead:
+(12) If you want Webpack to auto-bundle your JavaScript whenever any of it changes, issue this command instead:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --watch
 
