@@ -3,7 +3,8 @@
 //  http://maratbn.com/blogs/2018/06/17/minimalistic-react-webapp-webpack-3/
 
 
-const path = require('path');
+const path = require('path'),
+      webpack = require('webpack');
 
 module.exports = {
     entry: [path.join(__dirname, 'webpack_in', 'entry.js'),
@@ -20,5 +21,12 @@ module.exports = {
     output: {
         path:      path.join(__dirname, 'webpack_out'),
         filename:  'minimalistic_react.js'
-      }
+      },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin,
+        new webpack.DefinePlugin({'process.env': {
+                                      'NODE_ENV': JSON.stringify('production')
+                                    }
+                                  })
+      ]
   };
