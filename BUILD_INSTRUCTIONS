@@ -11,3 +11,15 @@
 
     v8.10.0
 
+
+(3) Install the NPM Node Package Manager.
+
+    (On Ubuntu 18.04, just do 'apt-get install npm' as 'root', otherwise go to:
+     https://docs.npmjs.com/getting-started/installing-node#installing-npm-from-the-nodejs-site)
+
+
+(4) Verify that NPM has been installed:
+
+    $ npm -v
+
+    3.5.2
