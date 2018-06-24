@@ -1,0 +1,13 @@
+
+(1) Install the Node.js JavaScript runtime environment using your OS package manager.
+
+    (On Ubuntu 18.04, just do 'apt-get install nodejs' as 'root', otherwise go to:
+     https://nodejs.org/en/download/package-manager)
+
+
+(2) Verify that Node.js has been installed:
+
+    $ node -v
+
+    v8.10.0
+
