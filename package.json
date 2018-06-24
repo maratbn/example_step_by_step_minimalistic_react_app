@@ -1,0 +1,23 @@
+{
+  "description": "This repo contains example commits for building a minimalistic React front-end app step by step with Webpack 3, as outlined in the tutorial at http://maratbn.com/blogs/2018/06/17/minimalistic-react-webapp-webpack-3/",
+  "dependencies": {
+    "preact": "^8.2.9",
+    "preact-compat": "^3.18.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maratbn/example_step_by_step_minimalistic_react_app.git"
+  },
+  "author": "maratbn",
+  "license": "Unlicense",
+  "homepage": "http://maratbn.com/blogs/2018/06/17/minimalistic-react-webapp-webpack-3/"
+}
