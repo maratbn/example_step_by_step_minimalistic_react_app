@@ -21,3 +21,10 @@
     $ npm -v
 
     3.5.2
+
+
+(5) Install the version 3 of the Webpack module bundler:
+
+    $ npm install webpack@webpack-3
+
+    ...
