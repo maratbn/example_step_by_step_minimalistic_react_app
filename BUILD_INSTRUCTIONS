@@ -23,49 +23,14 @@
     3.5.2
 
 
-(5) Install the version 3 of the Webpack module bundler:
+(5) Install the required NPM modules:
 
-    $ npm install webpack@webpack-3
-
-    ...
-
-
-(6) Install the Babel transpiler 'core' and 'loader':
-
-    $ npm install babel-core babel-loader
+    $ npm install
 
     ...
 
 
-(7) Install the Babel preset 'env':
-
-    $ npm install babel-preset-env
-
-    ...
-
-
-(8) Install the Babel preset 'react':
-
-    $ npm install babel-preset-react
-
-    ...
-
-
-(9) Install the NPM module for React:
-
-    $ npm install react
-
-    ...
-
-
-(10) Install the NPM module for React DOM:
-
-    $ npm install react-dom
-
-    ...
-
-
-(11) Bundle / transpile the JavaScript with Webpack for deployment:
+(6) Bundle / transpile the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js
 
