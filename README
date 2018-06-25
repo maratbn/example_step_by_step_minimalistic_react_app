@@ -1,2 +1,6 @@
+NOTICE:  You're viewing a branch for Webpack 1, which is presently obsolete.  Please switch to the
+corresponding branch for Webpack 3, which is 'webpack3'.
+
+
 This repo contains example commits for building a minimalistic React front-end app step by step,
 as outlined in the tutorial at http://maratbn.com/blogs/2017/01/14/minimalistic-react-webapp/
