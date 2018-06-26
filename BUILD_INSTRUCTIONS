@@ -23,3 +23,10 @@
     $ npm -v
 
     3.5.2
+
+
+(5) Install the latest version 4 of the Webpack module bundler:
+
+    $ npm install webpack@^4.12.1
+
+    ...
