@@ -44,3 +44,11 @@
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
     ...
+
+
+(8) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
+    command instead:
+
+    $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --watch
+
+    ...
