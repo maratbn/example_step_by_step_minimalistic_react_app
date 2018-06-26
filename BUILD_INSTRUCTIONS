@@ -39,14 +39,21 @@
     ...
 
 
-(7) Bundle the JavaScript with Webpack for deployment:
+(7) Install the NPM packages for the Babel transpiler:
+
+    $ npm install babel-core babel-loader
+
+    ...
+
+
+(8) Bundle the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
     ...
 
 
-(8) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
+(9) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
     command instead:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --watch
