@@ -30,3 +30,10 @@
     $ npm install webpack@^4.12.1
 
     ...
+
+
+(6) Install the NPM package 'webpack-cli':
+
+    $ npm install webpack-cli
+
+    ...
