@@ -60,14 +60,28 @@
     ...
 
 
-(10) Bundle the JavaScript with Webpack for deployment:
+(10) Install the NPM package for React:
+
+    $ npm install react
+
+    ...
+
+
+(11) Install the NPM package for React DOM:
+
+    $ npm install react-dom
+
+    ...
+
+
+(12) Bundle the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
     ...
 
 
-(11) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
+(13) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
      command instead:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --watch
