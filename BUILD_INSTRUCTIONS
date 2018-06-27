@@ -46,15 +46,29 @@
     ...
 
 
-(8) Bundle the JavaScript with Webpack for deployment:
+(8) Install the Babel preset 'env':
+
+    $ npm install babel-preset-env
+
+    ...
+
+
+(9) Install the Babel preset 'react':
+
+    $ npm install babel-preset-react
+
+    ...
+
+
+(10) Bundle the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
     ...
 
 
-(9) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
-    command instead:
+(11) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
+     command instead:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --watch
 
