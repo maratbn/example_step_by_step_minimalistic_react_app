@@ -29,5 +29,5 @@ module.exports = {
         path:      path.join(__dirname, 'webpack_out'),
         filename:  'minimalistic_react.js'
       },
-    mode: 'development'
+    mode: 'production'
   };
