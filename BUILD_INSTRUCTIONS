@@ -74,14 +74,21 @@
     ...
 
 
-(12) Bundle the JavaScript with Webpack for deployment:
+(12) Install the NPM packages for Preact:
+
+    $ npm install preact preact-compat
+
+    ...
+
+
+(13) Bundle the JavaScript with Webpack for deployment:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js
 
     ...
 
 
-(13) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
+(14) If you want Webpack to auto-re-bundle your JavaScript whenever any of it changes, issue this
      command instead:
 
     $ ./node_modules/webpack/bin/webpack.js --config ./webpack.config.js --watch
