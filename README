@@ -1,3 +1,5 @@
 This branch contains example commits for building a minimalistic React front-end app step by step
 with Webpack 4, as outlined in the tutorial at
 http://maratbn.com/blogs/2018/06/25/minimalistic-react-webapp-webpack-4/
+
+This branch uses 'package.json'.
