@@ -11,6 +11,7 @@ import ReactDOM from 'react-dom';
 
 
 const objStyleCommon = {
+    margin:     '1em',
     padding:    '1em',
     border:     'solid 2px green',
     textAlign:  'center'
