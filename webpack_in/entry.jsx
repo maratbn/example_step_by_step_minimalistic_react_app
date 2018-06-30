@@ -12,16 +12,19 @@ import ReactDOM from 'react-dom';
 
 const objStyleCommon = {
     margin:     '1em',
-    padding:    '1em',
     border:     'solid 2px green',
     textAlign:  'center'
+  };
+
+const objStyleContent = {
+    padding:    '1em'
   };
 
 
 class HelloWidget extends React.Component {
     render() {
         return (
-            <div style={ objStyleCommon }>
+            <div style={{ ...objStyleCommon, ...objStyleContent }}>
               Hello!  I'm a React app!!
             </div>
           );
@@ -32,7 +35,7 @@ class TextWidget extends React.Component {
     render() {
         return (
             <div style={ objStyleCommon }>
-              <div>Some text here....</div>
+              <div style={ objStyleContent }>Some text here....</div>
               <button>Change text...</button>
             </div>
           );
