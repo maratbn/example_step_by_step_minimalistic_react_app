@@ -22,4 +22,22 @@ class HelloWidget extends React.Component {
       }
 }
 
-ReactDOM.render(<HelloWidget />, document.getElementById('react-app'));
+class TextWidget extends React.Component {
+    render() {
+        return (
+            <div style={{ padding:    '1em',
+                          border:     'solid 2px green',
+                          textAlign:  'center' }}>
+              Some text here....
+            </div>
+          );
+      }
+}
+
+
+ReactDOM.render(
+    <div>
+      <HelloWidget />
+      <TextWidget />
+    </div>,
+    document.getElementById('react-app'));
