@@ -32,7 +32,8 @@ class TextWidget extends React.Component {
     render() {
         return (
             <div style={ objStyleCommon }>
-              Some text here....
+              <div>Some text here....</div>
+              <button>Change text...</button>
             </div>
           );
       }
