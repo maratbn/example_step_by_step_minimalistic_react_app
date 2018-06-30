@@ -21,6 +21,14 @@ const objStyleContent = {
   };
 
 
+class ButtonWidget extends React.Component {
+    render() {
+        return (
+            <button style={{ margin: '1em'}}>{ this.props.caption }</button>
+          );
+      }
+}
+
 class HelloWidget extends React.Component {
     render() {
         return (
@@ -36,7 +44,7 @@ class TextWidget extends React.Component {
         return (
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>Some text here....</div>
-              <button style={{ margin: '1em'}}>Change text...</button>
+              <ButtonWidget caption="Change text..." />
             </div>
           );
       }
@@ -54,9 +62,9 @@ class ListWidget extends React.Component {
                 </ul>
               </div>
               <div>
-                <button style={{ margin: '1em'}}>Add new item...</button>
-                <button style={{ margin: '1em'}}>Edit item...</button>
-                <button style={{ margin: '1em'}}>Remove item...</button>
+                <ButtonWidget caption="Add new item..." />
+                <ButtonWidget caption="Edit item..." />
+                <ButtonWidget caption="Remove item..." />
               </div>
             </div>
           );
