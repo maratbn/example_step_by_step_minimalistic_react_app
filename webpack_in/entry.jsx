@@ -6,6 +6,7 @@
 console.log("JSX entry logic.");
 
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -28,6 +29,10 @@ class ButtonWidget extends React.Component {
           );
       }
 }
+
+ButtonWidget.propTypes = {
+    caption:                    PropTypes.string.isRequired
+  };
 
 class HelloWidget extends React.Component {
     render() {
