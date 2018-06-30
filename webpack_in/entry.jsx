@@ -25,13 +25,15 @@ const objStyleContent = {
 class ButtonWidget extends React.Component {
     render() {
         return (
-            <button style={{ margin: '1em'}}>{ this.props.caption }</button>
+            <button style={{ margin: '1em'}}
+                    onClick={ this.props.onClick }>{ this.props.caption }</button>
           );
       }
 }
 
 ButtonWidget.propTypes = {
-    caption:                    PropTypes.string.isRequired
+    caption:                    PropTypes.string.isRequired,
+    onClick:                    PropTypes.func
   };
 
 class HelloWidget extends React.Component {
@@ -57,7 +59,16 @@ class TextWidget extends React.Component {
         return (
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>{ this.state.text }</div>
-              <ButtonWidget caption="Change text..." />
+              <ButtonWidget caption="Change text..."
+                            onClick={() => {
+                                const strTextNew = prompt("Please enter text to display:",
+                                                          this.state.text);
+                                if (strTextNew === null) {
+                                    return;
+                                }
+
+                                this.setState({...this.state, text: strTextNew});
+                              }}/>
             </div>
           );
       }
