@@ -77,6 +77,14 @@ class TextWidget extends React.Component {
 class ListWidget extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            items: [
+                "Item 1",
+                "Item 2",
+                "Item 3"
+              ]
+          };
       }
 
     render() {
@@ -84,9 +92,9 @@ class ListWidget extends React.Component {
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>
                 <ul style={{ display: 'inline-block' }}>
-                  <li>Item 1</li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
+                  { this.state.items.map((strItem, index) => (<li>
+                                                                { strItem }
+                                                              </li>)) }
                 </ul>
               </div>
               <div>
