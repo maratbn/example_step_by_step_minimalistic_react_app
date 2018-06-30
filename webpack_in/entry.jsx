@@ -36,7 +36,7 @@ class TextWidget extends React.Component {
         return (
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>Some text here....</div>
-              <button>Change text...</button>
+              <button style={{ margin: '1em'}}>Change text...</button>
             </div>
           );
       }
