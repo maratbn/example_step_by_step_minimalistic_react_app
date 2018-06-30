@@ -42,10 +42,32 @@ class TextWidget extends React.Component {
       }
 }
 
+class ListWidget extends React.Component {
+    render() {
+        return (
+            <div style={ objStyleCommon }>
+              <div style={ objStyleContent }>
+                <ul style={{ display: 'inline-block' }}>
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+              </div>
+              <div>
+                <button style={{ margin: '1em'}}>Add new item...</button>
+                <button style={{ margin: '1em'}}>Edit item...</button>
+                <button style={{ margin: '1em'}}>Remove item...</button>
+              </div>
+            </div>
+          );
+      }
+}
+
 
 ReactDOM.render(
     <div>
       <HelloWidget />
       <TextWidget />
+      <ListWidget />
     </div>,
     document.getElementById('react-app'));
