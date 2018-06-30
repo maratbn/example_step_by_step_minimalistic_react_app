@@ -47,12 +47,16 @@ class HelloWidget extends React.Component {
 class TextWidget extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            text: "Some text here...."
+          };
       }
 
     render() {
         return (
             <div style={ objStyleCommon }>
-              <div style={ objStyleContent }>Some text here....</div>
+              <div style={ objStyleContent }>{ this.state.text }</div>
               <ButtonWidget caption="Change text..." />
             </div>
           );
