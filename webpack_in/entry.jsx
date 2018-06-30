@@ -10,4 +10,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-ReactDOM.render(<div>Hello!  I'm a React app!!</div>, document.getElementById('react-app'));
+class HelloWidget extends React.Component {
+    render() {
+        return (<div>Hello!  I'm a React app!!</div>);
+      }
+}
+
+ReactDOM.render(<HelloWidget />, document.getElementById('react-app'));
