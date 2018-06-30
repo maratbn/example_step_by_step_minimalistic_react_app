@@ -1,5 +1,5 @@
 {
-  "description": "This branch contains example commits for building a minimalistic React front-end app step by step with Webpack 4, as outlined in the tutorial at http://maratbn.com/blogs/2018/06/25/minimalistic-react-webapp-webpack-4/",
+  "description": "This branch contains example commits for building a multi-widget React front-end app step by step as outlined in the tutorial at http://maratbn.com/blogs/2018/07/02/react-multi-widget/",
   "dependencies": {
     "preact": "^8.2.9",
     "preact-compat": "^3.18.0",
@@ -20,5 +20,5 @@
   },
   "author": "maratbn",
   "license": "Unlicense",
-  "homepage": "http://maratbn.com/blogs/2018/06/25/minimalistic-react-webapp-webpack-4/"
+  "homepage": "http://maratbn.com/blogs/2018/07/02/react-multi-widget/"
 }

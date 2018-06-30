@@ -1,5 +1,4 @@
-This branch contains example commits for building a minimalistic React front-end app step by step
-with Webpack 4, as outlined in the tutorial at
-http://maratbn.com/blogs/2018/06/25/minimalistic-react-webapp-webpack-4/
+This branch contains example commits for building a multi-widget React front-end app step by step,
+as outlined in the tutorial at http://maratbn.com/blogs/2018/07/02/react-multi-widget/
 
-This branch uses 'package.json' and swaps Preact for React.
+This branch is being forked-off the branch 'webpack4--preact--package.json'.
