@@ -98,7 +98,23 @@ class ListWidget extends React.Component {
                 </ul>
               </div>
               <div>
-                <ButtonWidget caption="Add new item..." />
+                <ButtonWidget caption="Add new item..."
+                              onClick={() => {
+                                  const strItemNew = prompt("Please enter new item to add:",
+                                                            "Item "
+                                                                + (this.state.items.length + 1));
+                                  if (strItemNew === null) {
+                                      return;
+                                  }
+
+                                  this.setState({
+                                      ...this.state,
+                                      items: [
+                                          ...this.state.items,
+                                          strItemNew
+                                        ]
+                                    });
+                                }}/>
                 <ButtonWidget caption="Edit item..." />
                 <ButtonWidget caption="Remove item..." />
               </div>
