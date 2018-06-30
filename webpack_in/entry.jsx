@@ -76,7 +76,7 @@ class TextWidget extends React.Component {
 
 class ListItem extends React.Component {
     render() {
-        return (<li>{ this.props.caption }</li>);
+        return (<li><input type='checkbox' />{ this.props.caption }</li>);
       }
 }
 
