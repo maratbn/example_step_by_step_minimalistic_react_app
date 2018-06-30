@@ -1,3 +1,7 @@
+NOTICE:  You're viewing a branch for Webpack 3, which is no longer the latest.  Please switch to
+the corresponding branch for Webpack 4, which is 'webpack4--preact'.
+
+
 This repo contains example commits for building a minimalistic React front-end app step by step
 with Webpack 3, as outlined in the tutorial at
 http://maratbn.com/blogs/2018/06/17/minimalistic-react-webapp-webpack-3/
