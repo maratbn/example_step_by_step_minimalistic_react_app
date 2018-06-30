@@ -12,7 +12,13 @@ import ReactDOM from 'react-dom';
 
 class HelloWidget extends React.Component {
     render() {
-        return (<div>Hello!  I'm a React app!!</div>);
+        return (
+            <div style={{ padding:    '1em',
+                          border:     'solid 2px green',
+                          textAlign:  'center' }}>
+              Hello!  I'm a React app!!
+            </div>
+          );
       }
 }
 
