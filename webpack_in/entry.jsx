@@ -45,6 +45,10 @@ class HelloWidget extends React.Component {
 }
 
 class TextWidget extends React.Component {
+    constructor(props) {
+        super(props);
+      }
+
     render() {
         return (
             <div style={ objStyleCommon }>
