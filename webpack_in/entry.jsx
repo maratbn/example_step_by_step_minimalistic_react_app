@@ -74,6 +74,16 @@ class TextWidget extends React.Component {
       }
 }
 
+class ListItem extends React.Component {
+    render() {
+        return (<li>{ this.props.caption }</li>);
+      }
+}
+
+ListItem.propTypes = {
+    caption:                    PropTypes.string.isRequired
+  };
+
 class ListWidget extends React.Component {
     constructor(props) {
         super(props);
@@ -109,9 +119,9 @@ class ListWidget extends React.Component {
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>
                 <ul style={{ display: 'inline-block', textAlign: 'left' }}>
-                  { this.state.items.map((objItem, index) => (<li key={ objItem.id }>
-                                                                { objItem.caption }
-                                                              </li>)) }
+                  { this.state.items.map((objItem, index) => (<ListItem key={ objItem.id }
+                                                                        caption={ objItem.caption }
+                                                              />)) }
                 </ul>
               </div>
               <div>
