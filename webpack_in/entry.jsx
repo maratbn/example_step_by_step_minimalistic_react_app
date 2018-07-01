@@ -77,13 +77,15 @@ class TextWidget extends React.Component {
 class ListItem extends React.Component {
     render() {
         return (<li><input type='checkbox'
-                           checked={ this.props.isChecked }/>{ this.props.caption }</li>);
+                           checked={ this.props.isChecked }
+                           onChange={ this.props.onChangeChecked }/>{ this.props.caption }</li>);
       }
 }
 
 ListItem.propTypes = {
     caption:                    PropTypes.string.isRequired,
-    isChecked:                  PropTypes.bool.isRequired
+    isChecked:                  PropTypes.bool.isRequired,
+    onChangeChecked:            PropTypes.func.isRequired
   };
 
 class ListWidget extends React.Component {
@@ -101,6 +103,17 @@ class ListWidget extends React.Component {
                   }
               ],
             total_added: state.total_added + 1
+          });
+
+        this._mutateStateToUpdateItemChecked = (state, id, isChecked) => ({
+            ...state,
+            items: state.items.map(objItem => (
+                objItem.id === id ? {
+                                        ...objItem,
+                                        is_checked: isChecked
+                                      }
+                                  : objItem
+              ))
           });
 
         const objStateEmpty = {
@@ -126,6 +139,13 @@ class ListWidget extends React.Component {
                         <ListItem key={ objItem.id }
                                   caption={ objItem.caption }
                                   isChecked={ objItem.is_checked }
+                                  onChangeChecked={ () => {
+                                      this.setState(
+                                          this._mutateStateToUpdateItemChecked(
+                                              this.state,
+                                              objItem.id,
+                                              !objItem.is_checked));
+                                    }}
                         />
                       )) }
                 </ul>
