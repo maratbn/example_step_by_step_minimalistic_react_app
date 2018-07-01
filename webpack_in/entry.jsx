@@ -101,7 +101,7 @@ class ListWidget extends React.Component {
                 {
                     id:          state.total_added,
                     caption:     strItemCaption,
-                    is_checked:  true
+                    is_checked:  false
                   }
               ],
             total_added: state.total_added + 1
