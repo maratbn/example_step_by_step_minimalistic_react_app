@@ -120,9 +120,11 @@ class ListWidget extends React.Component {
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>
                 <ul style={{ display: 'inline-block', textAlign: 'left', listStyleType: 'none' }}>
-                  { this.state.items.map((objItem, index) => (<ListItem key={ objItem.id }
-                                                                        caption={ objItem.caption }
-                                                              />)) }
+                  { this.state.items.map((objItem, index) => (
+                        <ListItem key={ objItem.id }
+                                  caption={ objItem.caption }
+                        />
+                      )) }
                 </ul>
               </div>
               <div>
