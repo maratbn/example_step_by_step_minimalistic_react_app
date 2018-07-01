@@ -83,7 +83,8 @@ class ListWidget extends React.Component {
                 "Item 1",
                 "Item 2",
                 "Item 3"
-              ]
+              ],
+            total_added: 3
           };
       }
 
@@ -112,7 +113,8 @@ class ListWidget extends React.Component {
                                       items: [
                                           ...this.state.items,
                                           strItemNew
-                                        ]
+                                        ],
+                                      total_added: this.state.total_added + 1
                                     });
                                 }}/>
                 <ButtonWidget caption="Edit item..." />
