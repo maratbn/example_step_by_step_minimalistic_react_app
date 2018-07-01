@@ -232,11 +232,45 @@ class ListWidget extends React.Component {
       }
 }
 
+class ColorSelector extends React.Component {
+    render() {
+        return (
+            <div style={ objStyleCommon }>
+              <div style={{ margin: '1em auto',
+                            width: '70%',
+                            height: '3em',
+                            border: 'solid 2px black' }} />
+              <div style={{ marginTop: '-1em'}}>
+                <div style={{ display: 'inline-block', margin: '1em' }}>
+                  R: <input type='text'
+                            size='4'
+                            maxLength='4'
+                            style={{ textAlign: 'center' }} />
+                </div>
+                <div style={{ display: 'inline-block', margin: '1em' }}>
+                  G: <input type='text'
+                            size='4'
+                            maxLength='4'
+                            style={{ textAlign: 'center' }} />
+                </div>
+                <div style={{ display: 'inline-block', margin: '1em' }}>
+                  B: <input type='text'
+                            size='4'
+                            maxLength='4'
+                            style={{ textAlign: 'center' }} />
+                </div>
+              </div>
+            </div>
+          );
+      }
+}
+
 
 ReactDOM.render(
     <div>
       <HelloWidget />
       <TextWidget />
       <ListWidget />
+      <ColorSelector />
     </div>,
     document.getElementById('react-app'));
