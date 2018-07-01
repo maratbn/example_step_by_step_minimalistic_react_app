@@ -232,6 +232,23 @@ class ListWidget extends React.Component {
       }
 }
 
+class ColorComponentEntry extends React.Component {
+    render() {
+        return (
+            <div style={{ display: 'inline-block', margin: '1em' }}>
+              { this.props.label }:  <input type='text'
+                                            size='4'
+                                            maxLength='4'
+                                            style={{ textAlign: 'center' }} />
+            </div>
+          );
+      }
+}
+
+ColorComponentEntry.propTypes = {
+    label:                      PropTypes.string.isRequired
+  };
+
 class ColorSelector extends React.Component {
     render() {
         return (
@@ -241,24 +258,9 @@ class ColorSelector extends React.Component {
                             height: '3em',
                             border: 'solid 2px black' }} />
               <div style={{ marginTop: '-1em'}}>
-                <div style={{ display: 'inline-block', margin: '1em' }}>
-                  R: <input type='text'
-                            size='4'
-                            maxLength='4'
-                            style={{ textAlign: 'center' }} />
-                </div>
-                <div style={{ display: 'inline-block', margin: '1em' }}>
-                  G: <input type='text'
-                            size='4'
-                            maxLength='4'
-                            style={{ textAlign: 'center' }} />
-                </div>
-                <div style={{ display: 'inline-block', margin: '1em' }}>
-                  B: <input type='text'
-                            size='4'
-                            maxLength='4'
-                            style={{ textAlign: 'center' }} />
-                </div>
+                <ColorComponentEntry label="R" />
+                <ColorComponentEntry label="G" />
+                <ColorComponentEntry label="B" />
               </div>
             </div>
           );
