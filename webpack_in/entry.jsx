@@ -169,7 +169,8 @@ class ListWidget extends React.Component {
                                 }}/>
                 <ButtonWidget caption="Edit item..."
                               isDisabled={ arrItemsSelected.length !== 1 }/>
-                <ButtonWidget caption="Remove item..."
+                <ButtonWidget caption={ arrItemsSelected.length > 1 ? "Remove items..."
+                                                                    : "Remove item..." }
                               isDisabled={ arrItemsSelected.length === 0 }/>
               </div>
             </div>
