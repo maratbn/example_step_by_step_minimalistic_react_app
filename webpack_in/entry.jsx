@@ -129,6 +129,11 @@ class ListWidget extends React.Component {
               ))
           });
 
+        this._mutateStateToRemoveItemsChecked = state => ({
+            ...state,
+            items: state.items.filter(objItem => !objItem.is_checked)
+          });
+
         const objStateEmpty = {
                                   items:        [],
                                   total_added:  0
@@ -145,6 +150,17 @@ class ListWidget extends React.Component {
 
     render() {
         const arrItemsSelected = this.state.items.filter(objItem => objItem.is_checked);
+
+        const formatListOfNames = (arrNames) => arrNames.reduce(
+            (strOutput, strName, index) => (
+                `${strOutput}${index > 0  //  Will render either ' and' or ',' before 2nd item.
+                                          //  Will render ', and' before the 3rd+ last item.
+                                  ? (`${arrNames.length > 2 ? ',' : ""
+                                        }${index === arrNames.length - 1 ? ' and' : ""}`
+                                      )
+                                  : ""} "${strName}"`
+              ),
+            "");
 
         return (
             <div style={ objStyleCommon }>
@@ -195,7 +211,21 @@ class ListWidget extends React.Component {
                                 }}/>
                 <ButtonWidget caption={ arrItemsSelected.length > 1 ? "Remove items..."
                                                                     : "Remove item..." }
-                              isDisabled={ arrItemsSelected.length === 0 }/>
+                              isDisabled={ arrItemsSelected.length === 0 }
+                              onClick={() => {
+                                  const arrCaptions = arrItemsSelected
+                                                                 .map(objItem => objItem.caption);
+                                  const isConfirmed = confirm(
+                                                          `Are you sure you want to remove item${
+                                                              arrCaptions.length > 1 ? "s" : ""} ${
+                                                                  formatListOfNames(arrCaptions)
+                                                            }?`);
+                                  if (isConfirmed === false) {
+                                      return;
+                                  }
+
+                                  this.setState(this._mutateStateToRemoveItemsChecked(this.state));
+                                }}/>
               </div>
             </div>
           );
