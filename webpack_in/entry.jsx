@@ -76,12 +76,14 @@ class TextWidget extends React.Component {
 
 class ListItem extends React.Component {
     render() {
-        return (<li><input type='checkbox' />{ this.props.caption }</li>);
+        return (<li><input type='checkbox'
+                           checked={ this.props.isChecked }/>{ this.props.caption }</li>);
       }
 }
 
 ListItem.propTypes = {
-    caption:                    PropTypes.string.isRequired
+    caption:                    PropTypes.string.isRequired,
+    isChecked:                  PropTypes.bool.isRequired
   };
 
 class ListWidget extends React.Component {
@@ -123,6 +125,7 @@ class ListWidget extends React.Component {
                   { this.state.items.map((objItem, index) => (
                         <ListItem key={ objItem.id }
                                   caption={ objItem.caption }
+                                  isChecked={ objItem.is_checked }
                         />
                       )) }
                 </ul>
