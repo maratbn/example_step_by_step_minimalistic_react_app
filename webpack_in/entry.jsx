@@ -26,6 +26,7 @@ class ButtonWidget extends React.Component {
     render() {
         return (
             <button style={{ margin: '1em'}}
+                    disabled={ this.props.isDisabled }
                     onClick={ this.props.onClick }>{ this.props.caption }</button>
           );
       }
@@ -33,6 +34,7 @@ class ButtonWidget extends React.Component {
 
 ButtonWidget.propTypes = {
     caption:                    PropTypes.string.isRequired,
+    isDisabled:                 PropTypes.bool,
     onClick:                    PropTypes.func
   };
 
@@ -131,6 +133,8 @@ class ListWidget extends React.Component {
       }
 
     render() {
+        const arrItemsSelected = this.state.items.filter(objItem => objItem.is_checked);
+
         return (
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>
@@ -163,8 +167,10 @@ class ListWidget extends React.Component {
                                   this.setState(this._mutateStateToAddItem(this.state,
                                                                            strItemNew));
                                 }}/>
-                <ButtonWidget caption="Edit item..." />
-                <ButtonWidget caption="Remove item..." />
+                <ButtonWidget caption="Edit item..."
+                              isDisabled={ arrItemsSelected.length !== 1 }/>
+                <ButtonWidget caption="Remove item..."
+                              isDisabled={ arrItemsSelected.length === 0 }/>
               </div>
             </div>
           );
