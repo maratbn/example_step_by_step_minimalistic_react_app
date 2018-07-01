@@ -78,14 +78,27 @@ class ListWidget extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this._mutateStateToAddItem = (state, strItemNew) => ({
+            ...state,
             items: [
-                "Item 1",
-                "Item 2",
-                "Item 3"
+                ...state.items,
+                strItemNew
               ],
-            total_added: 3
-          };
+            total_added: state.total_added + 1
+          });
+
+        const objStateEmpty = {
+                                  items:        [],
+                                  total_added:  0
+                                };
+
+        this.state = this._mutateStateToAddItem(
+                          this._mutateStateToAddItem(
+                              this._mutateStateToAddItem(
+                                  objStateEmpty,
+                                  "Item 1"),
+                              "Item 2"),
+                          "Item 3");
       }
 
     render() {
@@ -108,14 +121,8 @@ class ListWidget extends React.Component {
                                       return;
                                   }
 
-                                  this.setState({
-                                      ...this.state,
-                                      items: [
-                                          ...this.state.items,
-                                          strItemNew
-                                        ],
-                                      total_added: this.state.total_added + 1
-                                    });
+                                  this.setState(this._mutateStateToAddItem(this.state,
+                                                                           strItemNew));
                                 }}/>
                 <ButtonWidget caption="Edit item..." />
                 <ButtonWidget caption="Remove item..." />
