@@ -239,14 +239,16 @@ class ColorComponentEntry extends React.Component {
               { this.props.label }:  <input type='text'
                                             size='4'
                                             maxLength='4'
-                                            style={{ textAlign: 'center' }} />
+                                            style={{ textAlign: 'center' }}
+                                            value={ this.props.value } />
             </div>
           );
       }
 }
 
 ColorComponentEntry.propTypes = {
-    label:                      PropTypes.string.isRequired
+    label:                      PropTypes.string.isRequired,
+    value:                      PropTypes.number.isRequired
   };
 
 class ColorSelector extends React.Component {
@@ -270,9 +272,9 @@ class ColorSelector extends React.Component {
                             height: '3em',
                             border: 'solid 2px black' }} />
               <div style={{ marginTop: '-1em'}}>
-                <ColorComponentEntry label="R" />
-                <ColorComponentEntry label="G" />
-                <ColorComponentEntry label="B" />
+                <ColorComponentEntry label="R" value={ this.state.color.r } />
+                <ColorComponentEntry label="G" value={ this.state.color.g } />
+                <ColorComponentEntry label="B" value={ this.state.color.b } />
               </div>
             </div>
           );
