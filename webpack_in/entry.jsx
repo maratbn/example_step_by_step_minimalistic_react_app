@@ -78,11 +78,13 @@ class ListWidget extends React.Component {
     constructor(props) {
         super(props);
 
-        this._mutateStateToAddItem = (state, strItemNew) => ({
+        this._mutateStateToAddItem = (state, strItemCaption) => ({
             ...state,
             items: [
                 ...state.items,
-                strItemNew
+                {
+                    caption: strItemCaption
+                  }
               ],
             total_added: state.total_added + 1
           });
@@ -106,8 +108,8 @@ class ListWidget extends React.Component {
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>
                 <ul style={{ display: 'inline-block', textAlign: 'left' }}>
-                  { this.state.items.map((strItem, index) => (<li key={ index }>
-                                                                { strItem }
+                  { this.state.items.map((objItem, index) => (<li key={ index }>
+                                                                { objItem.caption }
                                                               </li>)) }
                 </ul>
               </div>
