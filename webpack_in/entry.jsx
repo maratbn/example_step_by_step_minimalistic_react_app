@@ -107,6 +107,17 @@ class ListWidget extends React.Component {
             total_added: state.total_added + 1
           });
 
+        this._mutateStateToUpdateItemCaption = (state, id, strCaptionNew) => ({
+            ...state,
+            items: state.items.map(objItem => (
+                objItem.id === id ? {
+                                        ...objItem,
+                                        caption: strCaptionNew
+                                      }
+                                  : objItem
+              ))
+          });
+
         this._mutateStateToUpdateItemChecked = (state, id, isChecked) => ({
             ...state,
             items: state.items.map(objItem => (
@@ -168,7 +179,20 @@ class ListWidget extends React.Component {
                                                                            strItemNew));
                                 }}/>
                 <ButtonWidget caption="Edit item..."
-                              isDisabled={ arrItemsSelected.length !== 1 }/>
+                              isDisabled={ arrItemsSelected.length !== 1 }
+                              onClick={() => {
+                                  const objItemEdit = arrItemsSelected[0];
+                                  const strItemEdited = prompt("Please edit item:",
+                                                               objItemEdit.caption);
+                                  if (strItemEdited === null) {
+                                      return;
+                                  }
+
+                                  this.setState(this._mutateStateToUpdateItemCaption(
+                                                                                  this.state,
+                                                                                  objItemEdit.id,
+                                                                                  strItemEdited));
+                                }}/>
                 <ButtonWidget caption={ arrItemsSelected.length > 1 ? "Remove items..."
                                                                     : "Remove item..." }
                               isDisabled={ arrItemsSelected.length === 0 }/>
