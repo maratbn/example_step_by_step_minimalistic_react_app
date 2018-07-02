@@ -276,6 +276,24 @@ class ColorComponentEntry extends React.Component {
 
                           this.props.onChangeValue(convertValue(strValueEntered));
                         }} />
+              <button onClick={ () => {
+                                    const valueNew = this.props.value + 1;
+
+                                    if (valueNew > 255) {
+                                        return;
+                                    }
+
+                                    this.props.onChangeValue(valueNew);
+                                  }}>&#9650;</button>
+              <button onClick={ () => {
+                                    const valueNew = this.props.value - 1;
+
+                                    if (valueNew < 0) {
+                                        return;
+                                    }
+
+                                    this.props.onChangeValue(valueNew);
+                                  }}>&#9660;</button>
             </div>
           );
       }
