@@ -10,16 +10,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-const objStyleCommon = {
-    margin:     '1em',
-    border:     'solid 2px green',
-    textAlign:  'center'
-  };
-
-const objStyleContent = {
-    padding:    '1em'
-  };
+import Styles from './styles.es';
 
 
 class ButtonWidget extends React.Component {
@@ -41,7 +32,7 @@ ButtonWidget.propTypes = {
 class HelloWidget extends React.Component {
     render() {
         return (
-            <div style={{ ...objStyleCommon, ...objStyleContent }}>
+            <div style={{ ...Styles.common, ...Styles.content }}>
               Hello!  I'm a React app!!
             </div>
           );
@@ -59,8 +50,8 @@ class TextWidget extends React.Component {
 
     render() {
         return (
-            <div style={ objStyleCommon }>
-              <div style={ objStyleContent }>{ this.state.text }</div>
+            <div style={ Styles.common }>
+              <div style={ Styles.content }>{ this.state.text }</div>
               <ButtonWidget caption="Change text..."
                             onClick={() => {
                                 const strTextNew = prompt("Please enter text to display:",
@@ -163,8 +154,8 @@ class ListWidget extends React.Component {
             "");
 
         return (
-            <div style={ objStyleCommon }>
-              <div style={ objStyleContent }>
+            <div style={ Styles.common }>
+              <div style={ Styles.content }>
                 <ul style={{ display: 'inline-block', textAlign: 'left', listStyleType: 'none' }}>
                   { this.state.items.map((objItem, index) => (
                         <ListItem key={ objItem.id }
@@ -387,7 +378,7 @@ class ColorSelector extends React.Component {
           };
 
         return (
-            <div style={ objStyleCommon }>
+            <div style={ Styles.common }>
               <div style={{ margin: '1em auto',
                             width: '70%',
                             height: '3em',
