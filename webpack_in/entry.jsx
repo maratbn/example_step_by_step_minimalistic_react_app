@@ -233,10 +233,37 @@ class ListWidget extends React.Component {
 }
 
 class ButtonForCounter extends React.Component {
+  constructor(props) {
+      super(props);
+
+      this._onCountStart = () => {
+          this._flagCount = true;
+
+          const doCount = () => {
+              if (!this._flagCount) {
+                  return;
+              }
+
+              this.props.onCount();
+
+              setTimeout(doCount, 25);
+            };
+
+          doCount();
+        };
+
+      this._onCountStop = () => {
+          this._flagCount = false;
+        };
+    }
+
   render() {
-      return (<button onClick={ () => {
-                          this.props.onCount();
-                        }}>{ this.props.caption }</button>);
+      return (<button onMouseDown={ this._onCountStart }
+                      onMouseUp={ this._onCountStop }
+                      onMouseLeave={ this._onCountStop }
+                      onTouchStart={ this._onCountStart }
+                      onTouchEnd={ this._onCountStop }
+                      onTouchCancel={ this._onCountStop }>{ this.props.caption }</button>);
     }
 }
 
