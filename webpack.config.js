@@ -10,6 +10,15 @@ module.exports = {
             path.join(__dirname, 'webpack_in', 'entry.jsx')],
     module: {
         rules: [{
+            test: /\.es$/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env'],
+                    plugins: ['transform-object-rest-spread']
+                  }
+              }]
+          }, {
             test: /\.jsx$/,
             use: [{
                 loader: 'babel-loader',
