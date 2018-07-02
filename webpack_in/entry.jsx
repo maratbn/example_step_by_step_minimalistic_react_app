@@ -303,6 +303,19 @@ class ColorSelector extends React.Component {
       }
 
     render() {
+        const updateStateForColor = (component, value) => {
+            const color = {
+                ...this.state.color
+              };
+
+            color[component] = value;
+
+            this.setState({
+                ...this.state,
+                color
+              });
+          };
+
         const { color } = this.state;
 
         const colorOpposite = {
@@ -323,35 +336,17 @@ class ColorSelector extends React.Component {
               <div style={{ marginTop: '-1em'}}>
                 <ColorComponentEntry label="R" value={ this.state.color.r } onChangeValue={
                     (value) => {
-                        this.setState({
-                            ...this.state,
-                            color: {
-                                ...this.state.color,
-                                r: value
-                              }
-                          });
+                        updateStateForColor('r', value);
                       }
                   } />
                 <ColorComponentEntry label="G" value={ this.state.color.g } onChangeValue={
                     (value) => {
-                        this.setState({
-                            ...this.state,
-                            color: {
-                                ...this.state.color,
-                                g: value
-                              }
-                          });
+                        updateStateForColor('g', value);
                       }
                   } />
                 <ColorComponentEntry label="B" value={ this.state.color.b } onChangeValue={
                     (value) => {
-                        this.setState({
-                            ...this.state,
-                            color: {
-                                ...this.state.color,
-                                b: value
-                              }
-                          });
+                        updateStateForColor('b', value);
                       }
                   } />
               </div>
