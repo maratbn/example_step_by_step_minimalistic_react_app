@@ -240,7 +240,44 @@ class ColorComponentEntry extends React.Component {
                                             size='4'
                                             maxLength='4'
                                             style={{ textAlign: 'center' }}
-                                            value={ this.props.value } />
+                                            value={ this.props.value }
+                                            onChange={ event => {
+                                                const strValueEntered = event.target.value;
+
+                                                //  Need to normalize the user input to a valid
+                                                //  value, which is 0 <= valid <= 255
+
+                                                //  Inputs of non-digits will be ignored.
+                                                if (!strValueEntered.match(/^\d*$/g)) {
+                                                    return;
+                                                }
+
+                                                //  Value must be converted to an integer.
+                                                const convertValue = strValueToConvert => {
+                                                    //  Blank / falsy input will be treated as 0.
+                                                    if (!strValueToConvert) {
+                                                        return 0;
+                                                    }
+
+                                                    const valueConverted = parseInt(
+                                                                               strValueToConvert);
+
+                                                    //  If the integer is <= 255 then it is a valid
+                                                    //  value and safe to return.
+                                                    if (valueConverted <= 255) {
+                                                        return valueConverted;
+                                                    }
+
+                                                    //  Otherwise will remove the left-most digit
+                                                    //  and try to convert again until the value
+                                                    //  becomes <= 255
+                                                    return convertValue(strValueToConvert
+                                                                                      .substr(1));
+                                                  };
+
+                                                this.props.onChangeValue(convertValue(
+                                                                                strValueEntered));
+                                              }} />
             </div>
           );
       }
@@ -248,7 +285,8 @@ class ColorComponentEntry extends React.Component {
 
 ColorComponentEntry.propTypes = {
     label:                      PropTypes.string.isRequired,
-    value:                      PropTypes.number.isRequired
+    value:                      PropTypes.number.isRequired,
+    onChangeValue:              PropTypes.func.isRequired
   };
 
 class ColorSelector extends React.Component {
@@ -272,9 +310,39 @@ class ColorSelector extends React.Component {
                             height: '3em',
                             border: 'solid 2px black' }} />
               <div style={{ marginTop: '-1em'}}>
-                <ColorComponentEntry label="R" value={ this.state.color.r } />
-                <ColorComponentEntry label="G" value={ this.state.color.g } />
-                <ColorComponentEntry label="B" value={ this.state.color.b } />
+                <ColorComponentEntry label="R" value={ this.state.color.r } onChangeValue={
+                    (value) => {
+                        this.setState({
+                            ...this.state,
+                            color: {
+                                ...this.state.color,
+                                r: value
+                              }
+                          });
+                      }
+                  } />
+                <ColorComponentEntry label="G" value={ this.state.color.g } onChangeValue={
+                    (value) => {
+                        this.setState({
+                            ...this.state,
+                            color: {
+                                ...this.state.color,
+                                g: value
+                              }
+                          });
+                      }
+                  } />
+                <ColorComponentEntry label="B" value={ this.state.color.b } onChangeValue={
+                    (value) => {
+                        this.setState({
+                            ...this.state,
+                            color: {
+                                ...this.state.color,
+                                b: value
+                              }
+                          });
+                      }
+                  } />
               </div>
             </div>
           );
