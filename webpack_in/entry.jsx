@@ -232,6 +232,19 @@ class ListWidget extends React.Component {
       }
 }
 
+class ButtonForCounter extends React.Component {
+  render() {
+      return (<button onClick={ () => {
+                          this.props.onCount();
+                        }}>{ this.props.caption }</button>);
+    }
+}
+
+ButtonForCounter.propTypes = {
+    caption:                    PropTypes.string.isRequired,
+    onCount:                    PropTypes.func.isRequired
+  };
+
 class ColorComponentEntry extends React.Component {
     render() {
         return (
@@ -276,7 +289,8 @@ class ColorComponentEntry extends React.Component {
 
                           this.props.onChangeValue(convertValue(strValueEntered));
                         }} />
-              <button onClick={ () => {
+              <ButtonForCounter caption="&#9650;"
+                                onCount={ () => {
                                     const valueNew = this.props.value + 1;
 
                                     if (valueNew > 255) {
@@ -284,8 +298,9 @@ class ColorComponentEntry extends React.Component {
                                     }
 
                                     this.props.onChangeValue(valueNew);
-                                  }}>&#9650;</button>
-              <button onClick={ () => {
+                                  }} />
+              <ButtonForCounter caption="&#9660;"
+                                onCount={ () => {
                                     const valueNew = this.props.value - 1;
 
                                     if (valueNew < 0) {
@@ -293,7 +308,7 @@ class ColorComponentEntry extends React.Component {
                                     }
 
                                     this.props.onChangeValue(valueNew);
-                                  }}>&#9660;</button>
+                                  }} />
             </div>
           );
       }
