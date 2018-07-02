@@ -236,48 +236,46 @@ class ColorComponentEntry extends React.Component {
     render() {
         return (
             <div style={{ display: 'inline-block', margin: '1em' }}>
-              { this.props.label }:  <input type='text'
-                                            size='4'
-                                            maxLength='4'
-                                            style={{ textAlign: 'center' }}
-                                            value={ this.props.value }
-                                            onChange={ event => {
-                                                const strValueEntered = event.target.value;
+              { this.props.label }:
+              <input type='text'
+                     size='4'
+                     maxLength='4'
+                     style={{ textAlign: 'center' }}
+                     value={ this.props.value }
+                     onChange={ event => {
+                          const strValueEntered = event.target.value;
 
-                                                //  Need to normalize the user input to a valid
-                                                //  value, which is 0 <= valid <= 255
+                          //  Need to normalize the user input to a valid
+                          //  value, which is 0 <= valid <= 255
 
-                                                //  Inputs of non-digits will be ignored.
-                                                if (!strValueEntered.match(/^\d*$/g)) {
-                                                    return;
-                                                }
+                          //  Inputs of non-digits will be ignored.
+                          if (!strValueEntered.match(/^\d*$/g)) {
+                              return;
+                          }
 
-                                                //  Value must be converted to an integer.
-                                                const convertValue = strValueToConvert => {
-                                                    //  Blank / falsy input will be treated as 0.
-                                                    if (!strValueToConvert) {
-                                                        return 0;
-                                                    }
+                          //  Value must be converted to an integer.
+                          const convertValue = strValueToConvert => {
+                              //  Blank / falsy input will be treated as 0.
+                              if (!strValueToConvert) {
+                                  return 0;
+                              }
 
-                                                    const valueConverted = parseInt(
-                                                                               strValueToConvert);
+                              const valueConverted = parseInt(strValueToConvert);
 
-                                                    //  If the integer is <= 255 then it is a valid
-                                                    //  value and safe to return.
-                                                    if (valueConverted <= 255) {
-                                                        return valueConverted;
-                                                    }
+                              //  If the integer is <= 255 then it is a valid
+                              //  value and safe to return.
+                              if (valueConverted <= 255) {
+                                  return valueConverted;
+                              }
 
-                                                    //  Otherwise will remove the left-most digit
-                                                    //  and try to convert again until the value
-                                                    //  becomes <= 255
-                                                    return convertValue(strValueToConvert
-                                                                                      .substr(1));
-                                                  };
+                              //  Otherwise will remove the left-most digit
+                              //  and try to convert again until the value
+                              //  becomes <= 255
+                              return convertValue(strValueToConvert.substr(1));
+                            };
 
-                                                this.props.onChangeValue(convertValue(
-                                                                                strValueEntered));
-                                              }} />
+                          this.props.onChangeValue(convertValue(strValueEntered));
+                        }} />
             </div>
           );
       }
