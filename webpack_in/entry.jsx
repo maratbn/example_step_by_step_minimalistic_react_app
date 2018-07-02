@@ -10,24 +10,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import ButtonWidget from './button_widget.jsx';
 import Styles from './styles.es';
 
-
-class ButtonWidget extends React.Component {
-    render() {
-        return (
-            <button style={{ margin: '1em'}}
-                    disabled={ this.props.isDisabled }
-                    onClick={ this.props.onClick }>{ this.props.caption }</button>
-          );
-      }
-}
-
-ButtonWidget.propTypes = {
-    caption:                    PropTypes.string.isRequired,
-    isDisabled:                 PropTypes.bool,
-    onClick:                    PropTypes.func
-  };
 
 class HelloWidget extends React.Component {
     render() {
