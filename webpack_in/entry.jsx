@@ -303,12 +303,15 @@ class ColorSelector extends React.Component {
       }
 
     render() {
+        const { color } = this.state;
+
         return (
             <div style={ objStyleCommon }>
               <div style={{ margin: '1em auto',
                             width: '70%',
                             height: '3em',
-                            border: 'solid 2px black' }} />
+                            border: 'solid 2px black',
+                            backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`}} />
               <div style={{ marginTop: '-1em'}}>
                 <ColorComponentEntry label="R" value={ this.state.color.r } onChangeValue={
                     (value) => {
