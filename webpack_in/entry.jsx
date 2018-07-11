@@ -92,7 +92,7 @@ class ListWidget extends React.Component {
             <div style={ objStyleCommon }>
               <div style={ objStyleContent }>
                 <ul style={{ display: 'inline-block' }}>
-                  { this.state.items.map((strItem, index) => (<li>
+                  { this.state.items.map((strItem, index) => (<li key={ index }>
                                                                 { strItem }
                                                               </li>)) }
                 </ul>
