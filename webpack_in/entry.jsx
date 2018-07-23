@@ -240,7 +240,7 @@ class ButtonForCounter extends React.Component {
           this._flagCount = true;
 
           const doCount = () => {
-              if (!this._flagCount) {
+              if (!this._flagCount || this.props.isDisabled) {
                   return;
               }
 
@@ -258,7 +258,8 @@ class ButtonForCounter extends React.Component {
     }
 
   render() {
-      return (<button onMouseDown={ this._onCountStart }
+      return (<button disabled={ this.props.isDisabled }
+                      onMouseDown={ this._onCountStart }
                       onMouseUp={ this._onCountStop }
                       onMouseLeave={ this._onCountStop }
                       onTouchStart={ this._onCountStart }
@@ -269,6 +270,7 @@ class ButtonForCounter extends React.Component {
 
 ButtonForCounter.propTypes = {
     caption:                    PropTypes.string.isRequired,
+    isDisabled:                 PropTypes.bool,
     onCount:                    PropTypes.func.isRequired
   };
 
@@ -317,6 +319,7 @@ class ColorComponentEntry extends React.Component {
                           this.props.onChangeValue(convertValue(strValueEntered));
                         }} />
               <ButtonForCounter caption="&#9650;"
+                                isDisabled={ this.props.value === 255 }
                                 onCount={ () => {
                                     const valueNew = this.props.value + 1;
 
@@ -327,6 +330,7 @@ class ColorComponentEntry extends React.Component {
                                     this.props.onChangeValue(valueNew);
                                   }} />
               <ButtonForCounter caption="&#9660;"
+                                isDisabled={ this.props.value === 0 }
                                 onCount={ () => {
                                     const valueNew = this.props.value - 1;
 
