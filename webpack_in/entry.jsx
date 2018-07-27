@@ -13,35 +13,8 @@ import ReactDOM from 'react-dom';
 import ButtonWidget from './button_widget.jsx';
 import HelloWidget from './hello_widget.jsx';
 import Styles from './styles.es';
+import TextWidget from './text_widget.jsx';
 
-
-class TextWidget extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            text: "Some text here...."
-          };
-      }
-
-    render() {
-        return (
-            <div style={ Styles.common }>
-              <div style={ Styles.content }>{ this.state.text }</div>
-              <ButtonWidget caption="Change text..."
-                            onClick={() => {
-                                const strTextNew = prompt("Please enter text to display:",
-                                                          this.state.text);
-                                if (strTextNew === null) {
-                                    return;
-                                }
-
-                                this.setState({...this.state, text: strTextNew});
-                              }}/>
-            </div>
-          );
-      }
-}
 
 class ListItem extends React.Component {
     render() {
