@@ -11,18 +11,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ButtonWidget from './button_widget.jsx';
+import HelloWidget from './hello_widget.jsx';
 import Styles from './styles.es';
 
-
-class HelloWidget extends React.Component {
-    render() {
-        return (
-            <div style={{ ...Styles.common, ...Styles.content }}>
-              Hello!  I'm a React app!!
-            </div>
-          );
-      }
-}
 
 class TextWidget extends React.Component {
     constructor(props) {
