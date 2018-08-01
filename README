@@ -1,6 +1,6 @@
 This branch contains example commits for building a multi-widget React front-end app step by step,
 as outlined in the tutorial at http://maratbn.com/blogs/2018/07/02/react-multi-widget/
 
-This branch is being forked-off the branch 'react-multi-widget'.
+This branch is being forked-off the branch 'react-multi-widget--preact'.
 
-This branch is for development build with Preact.
+This branch is for production build with Preact.
